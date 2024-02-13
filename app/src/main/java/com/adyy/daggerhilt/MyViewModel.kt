@@ -7,8 +7,5 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 @HiltViewModel
 class MyViewModel(
     private val repository: MyRepository
-): ViewModel() {
-
-
-
+): ViewModel(){
 }
