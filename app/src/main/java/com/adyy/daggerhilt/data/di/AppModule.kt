@@ -1,6 +1,8 @@
 package com.adyy.daggerhilt.data.di
 
 import com.adyy.daggerhilt.data.MyApi
+import com.adyy.daggerhilt.data.repository.MyRepositoryImpl
+import com.adyy.daggerhilt.domain.repository.MyRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,6 +21,12 @@ object AppModule {
             .baseUrl("https://test.com")
             .build()
             .create(MyApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideMyRepository(api: MyApi): MyRepository{
+        return MyRepositoryImpl(api)
     }
 
 
