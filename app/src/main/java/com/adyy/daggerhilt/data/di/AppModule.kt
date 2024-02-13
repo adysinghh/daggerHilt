@@ -1,5 +1,6 @@
 package com.adyy.daggerhilt.data.di
 
+import android.app.Application
 import com.adyy.daggerhilt.data.MyApi
 import com.adyy.daggerhilt.data.repository.MyRepositoryImpl
 import com.adyy.daggerhilt.domain.repository.MyRepository
@@ -25,7 +26,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideMyRepository(api: MyApi): MyRepository{
+    fun provideMyRepository(api: MyApi , app: Application): MyRepository{
         return MyRepositoryImpl(api)
     }
 
