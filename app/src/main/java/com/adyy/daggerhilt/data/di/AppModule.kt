@@ -26,11 +26,11 @@ object AppModule {
             .create(MyApi::class.java)
     }
 
-    @Provides
-    @Singleton
-    fun provideMyRepository(api: MyApi , app: Application, hello1: String): MyRepository{
-        return MyRepositoryImpl(api , app)
-    }
+//    @Provides
+//    @Singleton
+//    fun provideMyRepository(api: MyApi , app: Application, hello1: String): MyRepository{
+//        return MyRepositoryImpl(api , app)
+//    }
 
 
     //Named to avoid instance conflict
